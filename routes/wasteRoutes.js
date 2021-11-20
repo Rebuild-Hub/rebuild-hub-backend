@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Waste = require("../models/Waste");
 const auth = require("../middleware/auth");
-const companies  = require("../company")
+const companies = require("../company");
 //create new waste product
 router.post("/", auth, async (req, res) => {
   try {
@@ -17,13 +17,15 @@ router.post("/", auth, async (req, res) => {
       user: req.user.id,
     });
 
-    const targetCompany = companies.filter((c)=>c.name==company)
+    const targetCompany = companies.filter((c) => c.name == company);
 
-   const wasteProduct  =   targetCompany[0].donations.find((c)=>c.category == category)
-   wasteProduct.target-=weight
-   wasteProduct.fullfilled+=weight
+    const wasteProduct = targetCompany[0].donations.find(
+      (c) => c.category == category
+    );
+    wasteProduct.target -= weight;
+    wasteProduct.fullfilled += weight;
     await waste.save();
-    return res.json({waste , targetCompany});
+    return res.json({ waste, targetCompany });
   } catch (error) {
     console.log(error.message);
   }
@@ -41,10 +43,13 @@ router.get("/me", auth, async (req, res) => {
     console.log(error.message);
   }
 });
+
 //get All products for user categorywise
 router.get("/category/:c", auth, async (req, res) => {
   try {
-    const wasteProducts = await Waste.find({ $and: [{ user: req.user.id }, { category: req.params.c }] });
+    const wasteProducts = await Waste.find({
+      $and: [{ user: req.user.id }, { category: req.params.c }],
+    });
     if (wasteProducts.length == 0) {
       return res.status(400).json({ msg: "No watse product present" });
     }
@@ -53,6 +58,5 @@ router.get("/category/:c", auth, async (req, res) => {
     console.log(error.message);
   }
 });
-
 
 module.exports = router;
