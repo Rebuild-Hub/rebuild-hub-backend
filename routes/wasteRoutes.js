@@ -19,9 +19,6 @@ router.post("/", auth, async (req, res) => {
     });
     const targetCompany = await Company.findOne({ name: company });
     targetCompany.donations[category][name].fullfilled += weight;
-    if (targetCompany.donations[category][name].target - weight <= 0) {
-      targetCompany.donations[category][name].target -= 0;
-    }
 
     await waste.save();
     await targetCompany.save();
