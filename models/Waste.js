@@ -3,19 +3,26 @@ const Schema = mongoose.Schema;
 
 const wasteSchema = new Schema({
   name: {
-    type: string,
+    type: String,
   },
   category: {
-    type: string,
+    type: String,
   },
   rate: {
-    type: number,
+    type: Number,
   },
   weight: {
-    type: number,
+    type: Number,
   },
-  Company: {
-    type: string,
+  company: {
+    type: String,
+  },
+  image: {
+    type: String,
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "users",
   },
 });
 
