@@ -13,6 +13,16 @@ module.exports =  [
         target: 1500,
         fullfilled: 1000,
       },
+      {
+        category: "PLASTICS",
+        target: 500,
+        fullfilled: 200,
+      },
+      {
+        category: "E-WASTE",
+        target: 150,
+        fullfilled: 100
+      },
     ],
   },
   {

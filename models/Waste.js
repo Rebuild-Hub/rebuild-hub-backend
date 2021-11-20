@@ -7,6 +7,7 @@ const wasteSchema = new Schema({
   },
   category: {
     type: String,
+    enum : ["PAPERS" , "METALS" , "PLASTIC"  ,  "E-WASTE"]
   },
   rate: {
     type: Number,
