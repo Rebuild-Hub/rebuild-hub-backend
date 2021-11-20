@@ -45,4 +45,31 @@ router.get("/", async (req, res) => {
   }
 });
 
+//get companies for perticular waste
+router.get("/stats/:category/:waste", async (req, res) => {
+  try {
+    const companies = await Company.find({});
+    const {waste , category } = req.params;
+    const result = [];
+    companies.map((c) => {
+   
+      if (
+        c.donations[category][waste].fullfilled <
+        c.donations[category][waste].target
+      ) {
+        //fullfilled ,target , name
+        const data = {};
+        data.name = c.name;
+        data.fullfilled = c.donations[category][waste].fullfilled;
+        data.target =c.donations[category][waste].target;
+        result.push(data);
+      }
+    });
+
+    return res.json(result);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;
