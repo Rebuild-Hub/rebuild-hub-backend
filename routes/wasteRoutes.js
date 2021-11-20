@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Waste = require("../models/Waste");
 const auth = require("../middleware/auth");
+const Company = require("../models/Company");
 const companies = require("../company");
-
 //create new waste product
 router.post("/", auth, async (req, res) => {
   try {
@@ -17,14 +17,9 @@ router.post("/", auth, async (req, res) => {
       user: req.user.id,
       rate,
     });
-
-    const targetCompany = companies.filter((c) => c.name == company);
-
-    const wasteProduct = targetCompany[0].donations.find(
-      (c) => c.category == category
-    );
-    wasteProduct.target -= weight;
-    wasteProduct.fullfilled += weight;
+    const targetCompany = await Company.findOne({ name: company });
+    targetCompany.donations.category.name.fullfilled += wieght;
+    targetCompany.donations.category.name.target -= wieght;
     await waste.save();
     return res.json({ waste, targetCompany });
   } catch (error) {
@@ -60,18 +55,4 @@ router.get("/category/:c", auth, async (req, res) => {
   }
 });
 
-//get all donation for a waste
-router.get("/waste/:c", auth, async (req, res) => {
-  try {
-    const wasteDonations = await Waste.find({
-      $and: [{ user: req.user.id }, { name: req.params.c }],
-    });
-    if (wasteDonations.length == 0) {
-      return res.json({ wasteDonations, msg: "No donations found" });
-    }
-    return res.json({ wasteDonations, message });
-  } catch (error) {
-    console.log(error.message);
-  }
-});
 module.exports = router;
