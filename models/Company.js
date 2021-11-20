@@ -4,30 +4,18 @@ const Schema = mongoose.Schema;
 const companySchema = new Schema({
   name: {
     type: String,
+    unique: true,
   },
   email: {
     type: String,
   },
-  donations: [
-    {
-      categoryName: {
-        type: String,
-      },
-      wastes: [
-        {
-          name: {
-            type: String,
-          },
-          target: {
-            type: Number,
-          },
-          fullfilled: {
-            type: Number,
-          },
-        },
-      ],
-    },
-  ],
+  password: {
+    type: String,
+  },
+  isCompany: {
+    type: Boolean,
+  },
+  donations: {},
 });
 
 module.exports = mongoose.model("company", companySchema);

@@ -1,162 +1,118 @@
 [
     {
-        "name": "TSC", 
-        "email":"admin@tcs.com",
-        "donations":[
-            {
-                "categoryName" :"PAPERS",
-                "wastes":[
-                    {
-                        "name" : "NewsPapers",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Books",
-                        "target":400,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Magazines",
-                        "target":800,
-                        "fullfilled":400
-                    }
-
-                ]
+        "name": "TCS",
+        "email": "admin@tcs.com",
+        "donations": {
+            "PAPERS": {
+                "Newspapers": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Books": {
+                    "target": 600,
+                    "fullfilled": 200
+                },
+                "Magazines": {
+                    "target": 700,
+                    "fullfilled": 400
+                }
             },
-            {
-                "categoryName" :"METALS",
-                "wastes":[
-                    {
-                        "name" : "Aluminium",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Steel",
-                        "target":400,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Zinc",
-                        "target":800,
-                        "fullfilled":400
-                    }
-
-                ]
+            "METALS": {
+                "Aluminium": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Zinc": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Steel": {
+                    "target": 400,
+                    "fullfilled": 100
+                }
             },
-            {
-                "categoryName" :"PLASTIC",
-                "wastes":[
-                    {
-                        "name" : "Polythene",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Plasticbags",
-                        "target":400,
-                        "fullfilled":100
-                    }
-
-                ]
+            "PLASTICS": {
+                "Plasticbags": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Polythene": {
+                    "target": 900,
+                    "fullfilled": 100
+                }
             },
-            {
-                "categoryName" :"E-WASTE",
-                "wastes":[
-                    {
-                        "name" : "Mobile",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Laptop",
-                        "target":400,
-                        "fullfilled":100
-                    }
-
-                ]
+            "E-WASTE": {
+                "Mobile": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Tv": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Laptop": {
+                    "target": 400,
+                    "fullfilled": 100
+                }
             }
-        ]   
+        }
     },
     {
-        "name": "HCL", 
-        "email":"admin@hcl.com",
-        "donations":[
-            {
-                "categoryName" :"PAPERS",
-                "wastes":[
-                    {
-                        "name" : "NewsPapers",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Books",
-                        "target":400,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Magazines",
-                        "target":800,
-                        "fullfilled":400
-                    }
-
-                ]
+        "name": "Infosys",
+        "email": "admin@infosys.com",
+        "donations": {
+            "PAPERS": {
+                "Newspapers": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Books": {
+                    "target": 600,
+                    "fullfilled": 200
+                },
+                "Magazines": {
+                    "target": 700,
+                    "fullfilled": 400
+                }
             },
-            {
-                "categoryName" :"METALS",
-                "wastes":[
-                    {
-                        "name" : "Aluminium",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Steel",
-                        "target":400,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Zinc",
-                        "target":800,
-                        "fullfilled":400
-                    }
-
-                ]
+            "METALS": {
+                "Aluminium": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Zinc": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Steel": {
+                    "target": 400,
+                    "fullfilled": 100
+                }
             },
-            {
-                "categoryName" :"PLASTIC",
-                "wastes":[
-                    {
-                        "name" : "Polythene",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Plasticbags",
-                        "target":400,
-                        "fullfilled":100
-                    }
-
-                ]
+            "PLASTICS": {
+                "Plasticbags": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Polythene": {
+                    "target": 900,
+                    "fullfilled": 100
+                }
             },
-            {
-                "categoryName" :"E-WASTE",
-                "wastes":[
-                    {
-                        "name" : "Mobile",
-                        "target":500,
-                        "fullfilled":100
-                    },
-                    {
-                        "name" : "Laptop",
-                        "target":400,
-                        "fullfilled":100
-                    }
-
-                ]
+            "E-WASTE": {
+                "Mobile": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Tv": {
+                    "target": 400,
+                    "fullfilled": 100
+                },
+                "Laptop": {
+                    "target": 400,
+                    "fullfilled": 100
+                }
             }
-        ]   
+        }
     }
 ]
