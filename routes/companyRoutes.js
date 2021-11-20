@@ -28,8 +28,6 @@ router.get("/:name", async (req, res) => {
   }
 });
 
-
-
 //get all companies
 router.get("/", async (req, res) => {
   try {
