@@ -40,11 +40,13 @@ router.get("/me", auth, async (req, res) => {
     console.log(error.message);
   }
 });
+
+
 //get All products for user categorywise
-router.get("/category/:c", auth, async (req, res) => {
+router.get("/wasteItem/:c", auth, async (req, res) => {
   try {
     const wasteProducts = await Waste.find({
-      $and: [{ user: req.user.id }, { category: req.params.c }],
+      $and: [{ user: req.user.id }, { name : req.params.c }],
     });
     if (wasteProducts.length == 0) {
       return res.status(400).json({ msg: "No watse product present" });
