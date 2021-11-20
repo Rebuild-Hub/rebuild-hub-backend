@@ -48,6 +48,22 @@ router.get("/wasteItem/:c", auth, async (req, res) => {
       $and: [{ user: req.user.id }, { name: req.params.c }],
     });
     if (wasteProducts.length == 0) {
+      return res.status(400).json({ msg: "No watse product present" });
+    }
+    return res.json({ wasteProducts });
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+//get All products for user categorywise
+router.get("/:category", auth, async (req, res) => {
+  try {
+    console.log("Waste Product");
+    const wasteProducts = await Waste.find({
+      $and: [{ user: req.user.id }, { category: req.params.category }],
+    });
+    if (wasteProducts.length == 0) {
       return res
         .status(400)
         .json({ wasteProducts, msg: "No waste product present" });
