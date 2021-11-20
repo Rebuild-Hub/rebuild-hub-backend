@@ -4,10 +4,23 @@ const config = require("config");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
-const auth = require("../middleware/auth")
+const auth = require("../middleware/auth");
 
-router.get("/",auth , (req, res) => {
+router.get("/", auth, (req, res) => {
   res.send("User Routes");
+});
+
+//get logged in user
+router.get("/me", auth, async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req.user.id }, { "password": 0 });
+    if (!user) {
+      return res.status(401).json({ msg: "Authorization error" });
+    }
+    return res.json(user);
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 //sign up
