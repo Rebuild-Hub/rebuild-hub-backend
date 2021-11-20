@@ -19,9 +19,6 @@ router.post("/", auth, async (req, res) => {
     });
     const targetCompany = await Company.findOne({ name: company });
     targetCompany.donations[category][name].fullfilled += weight;
-    if (targetCompany.donations[category][name].target - weight <= 0) {
-      targetCompany.donations[category][name].target -= 0;
-    }
 
     await waste.save();
     await targetCompany.save();
@@ -45,10 +42,10 @@ router.get("/me", auth, async (req, res) => {
 });
 
 //get All products for user categorywise
-router.get("/category/:c", auth, async (req, res) => {
+router.get("/wasteItem/:c", auth, async (req, res) => {
   try {
     const wasteProducts = await Waste.find({
-      $and: [{ user: req.user.id }, { category: req.params.c }],
+      $and: [{ user: req.user.id }, { name : req.params.c }],
     });
     if (wasteProducts.length == 0) {
       return res.status(400).json({ msg: "No waste product present" });

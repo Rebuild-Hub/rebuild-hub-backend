@@ -37,6 +37,16 @@ const companySchema = new Schema({
           default: 0,
         },
       },
+      Magazines: {
+        target: {
+          type: Number,
+          default: 0,
+        },
+        fullfilled: {
+          type: Number,
+          default: 0,
+        },
+      },
     },
     METALS: {
       Aluminium: {
