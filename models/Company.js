@@ -8,18 +8,24 @@ const companySchema = new Schema({
   email: {
     type: String,
   },
-
-  Donations: [
+  donations: [
     {
-      Category: {
+      categoryName: {
         type: String,
       },
-      target: {
-        type: Number,
-      },
-      Fullfilled: {
-        type: Number,
-      },
+      wastes: [
+        {
+          name: {
+            type: String,
+          },
+          target: {
+            type: Number,
+          },
+          fullfilled: {
+            type: Number,
+          },
+        },
+      ],
     },
   ],
 });

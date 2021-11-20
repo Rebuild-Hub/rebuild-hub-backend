@@ -1,0 +1,162 @@
+[
+    {
+        "name": "TSC", 
+        "email":"admin@tcs.com",
+        "donations":[
+            {
+                "categoryName" :"PAPERS",
+                "wastes":[
+                    {
+                        "name" : "NewsPapers",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Books",
+                        "target":400,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Magazines",
+                        "target":800,
+                        "fullfilled":400
+                    }
+
+                ]
+            },
+            {
+                "categoryName" :"METALS",
+                "wastes":[
+                    {
+                        "name" : "Aluminium",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Steel",
+                        "target":400,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Zinc",
+                        "target":800,
+                        "fullfilled":400
+                    }
+
+                ]
+            },
+            {
+                "categoryName" :"PLASTIC",
+                "wastes":[
+                    {
+                        "name" : "Polythene",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Plasticbags",
+                        "target":400,
+                        "fullfilled":100
+                    }
+
+                ]
+            },
+            {
+                "categoryName" :"E-WASTE",
+                "wastes":[
+                    {
+                        "name" : "Mobile",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Laptop",
+                        "target":400,
+                        "fullfilled":100
+                    }
+
+                ]
+            }
+        ]   
+    },
+    {
+        "name": "HCL", 
+        "email":"admin@hcl.com",
+        "donations":[
+            {
+                "categoryName" :"PAPERS",
+                "wastes":[
+                    {
+                        "name" : "NewsPapers",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Books",
+                        "target":400,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Magazines",
+                        "target":800,
+                        "fullfilled":400
+                    }
+
+                ]
+            },
+            {
+                "categoryName" :"METALS",
+                "wastes":[
+                    {
+                        "name" : "Aluminium",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Steel",
+                        "target":400,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Zinc",
+                        "target":800,
+                        "fullfilled":400
+                    }
+
+                ]
+            },
+            {
+                "categoryName" :"PLASTIC",
+                "wastes":[
+                    {
+                        "name" : "Polythene",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Plasticbags",
+                        "target":400,
+                        "fullfilled":100
+                    }
+
+                ]
+            },
+            {
+                "categoryName" :"E-WASTE",
+                "wastes":[
+                    {
+                        "name" : "Mobile",
+                        "target":500,
+                        "fullfilled":100
+                    },
+                    {
+                        "name" : "Laptop",
+                        "target":400,
+                        "fullfilled":100
+                    }
+
+                ]
+            }
+        ]   
+    }
+]
