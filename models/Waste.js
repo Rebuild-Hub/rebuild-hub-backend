@@ -10,6 +10,7 @@ const wasteSchema = new Schema({
   },
   rate: {
     type: Number,
+    default: 5,
   },
   weight: {
     type: Number,

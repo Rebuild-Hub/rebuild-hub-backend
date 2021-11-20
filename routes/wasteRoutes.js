@@ -12,10 +12,10 @@ router.post("/", auth, async (req, res) => {
       name,
       category,
       weight,
-      rate,
       company,
       image,
       user: req.user.id,
+      rate,
     });
 
     const targetCompany = companies.filter((c) => c.name == company);
