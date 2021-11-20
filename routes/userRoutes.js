@@ -4,8 +4,6 @@ const config = require("config");
 const User = require("../models/User")
 const jwt = require("jsonwebtoken");
 
-
-
 //get all users
 router.get("/" , async(req , res)=>{
   try {
@@ -16,8 +14,5 @@ router.get("/" , async(req , res)=>{
     console.log(error.message);
   }
 })
-
-
-
 
 module.exports = router;

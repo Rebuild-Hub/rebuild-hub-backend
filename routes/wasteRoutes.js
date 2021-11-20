@@ -3,6 +3,7 @@ const router = express.Router();
 const Waste = require("../models/Waste");
 const auth = require("../middleware/auth");
 const companies = require("../company");
+
 //create new waste product
 router.post("/", auth, async (req, res) => {
   try {
@@ -51,7 +52,7 @@ router.get("/category/:c", auth, async (req, res) => {
       $and: [{ user: req.user.id }, { category: req.params.c }],
     });
     if (wasteProducts.length == 0) {
-      return res.status(400).json({ msg: "No watse product present" });
+      return res.status(400).json({ msg: "No waste product present" });
     }
     return res.json({ wasteProducts });
   } catch (error) {
@@ -59,4 +60,18 @@ router.get("/category/:c", auth, async (req, res) => {
   }
 });
 
+//get all donation for a waste
+router.get("/waste/:c", auth, async (req, res) => {
+  try {
+    const wasteDonations = await Waste.find({
+      $and: [{ user: req.user.id }, { name: req.params.c }],
+    });
+    if (wasteDonations.length == 0) {
+      return res.json({ wasteDonations, msg: "No donations found" });
+    }
+    return res.json({ wasteDonations, message });
+  } catch (error) {
+    console.log(error.message);
+  }
+});
 module.exports = router;
