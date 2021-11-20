@@ -49,10 +49,10 @@ router.get("/", async (req, res) => {
 router.get("/stats/:category/:waste", async (req, res) => {
   try {
     const companies = await Company.find({});
-    const {waste , category } = req.params;
+    const { waste, category } = req.params;
+    console.log(waste, category);
     const result = [];
     companies.map((c) => {
-   
       if (
         c.donations[category][waste].fullfilled <
         c.donations[category][waste].target
@@ -61,7 +61,7 @@ router.get("/stats/:category/:waste", async (req, res) => {
         const data = {};
         data.name = c.name;
         data.fullfilled = c.donations[category][waste].fullfilled;
-        data.target =c.donations[category][waste].target;
+        data.target = c.donations[category][waste].target;
         result.push(data);
       }
     });
