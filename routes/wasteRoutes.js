@@ -59,7 +59,6 @@ router.get("/wasteItem/:c", auth, async (req, res) => {
 //get All products for user categorywise
 router.get("/:category", auth, async (req, res) => {
   try {
-    console.log("Waste Product");
     const wasteProducts = await Waste.find({
       $and: [{ user: req.user.id }, { category: req.params.category }],
     });
