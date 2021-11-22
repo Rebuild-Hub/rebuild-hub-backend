@@ -89,4 +89,22 @@ router.get("/:category/total", auth, async (req, res) => {
 });
 
 
+//get All products for user categorywise
+router.get("/wasteItem/:c/total", auth, async (req, res) => {
+  try {
+    const wasteProducts = await Waste.find({
+      $and: [{ user: req.user.id }, { name: req.params.c }],
+    });
+    if (wasteProducts.length == 0) {
+      return res.status(400).json({ msg: "No watse product present" });
+    }
+    let total = 0
+    wasteProducts.map(w=>total+=w.weight)
+    return res.json(total);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+
 module.exports = router;
