@@ -29,21 +29,12 @@ router.get("/me", auth, async (req, res) => {
     if (!company) {
       return res.status(400).json({ msg: "Company not present" });
     }
-    return res.json(company);
+    return res.json(company.donations);
   } catch (error) {
     console.log(error.message);
   }
 });
 
-//get all companies
-router.get("/", async (req, res) => {
-  try {
-    const company = await Company.find({});
-    return res.json(company);
-  } catch (error) {
-    console.log(error.message);
-  }
-});
 
 //get companies for perticular waste
 router.get("/stats/:category/:waste", async (req, res) => {
@@ -71,5 +62,7 @@ router.get("/stats/:category/:waste", async (req, res) => {
     console.log(error);
   }
 });
+
+
 
 module.exports = router;
