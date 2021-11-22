@@ -64,5 +64,26 @@ router.get("/stats/:category/:waste", async (req, res) => {
 });
 
 
+//get companies for perticular waste
+router.post("/request/:category/:waste",auth, async (req, res) => {
+  try {
+    const {value} = req.body
+    const c = await User.findOne({ _id: req.user.id });
+    if (!c) {
+      return res.status(400).json({ msg: "Company not present" });
+    }
+    const company = await Company.findOne({ name: c.name });
+    if (!company) {
+      return res.status(400).json({ msg: "Company not present" });
+    }
+    const { waste, category } = req.params;
+    company.donations[category][waste].target+=value;
+    await company.save()
+    return res.json(company);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 module.exports = router;
