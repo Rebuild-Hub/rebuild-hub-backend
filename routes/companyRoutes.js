@@ -41,7 +41,6 @@ router.get("/stats/:category/:waste", async (req, res) => {
   try {
     const companies = await Company.find({});
     const { waste, category } = req.params;
-    console.log(waste, category);
     const result = [];
     companies.map((c) => {
       if (
