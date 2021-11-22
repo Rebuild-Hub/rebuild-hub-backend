@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//get all company by name
+//get all company donations
 router.get("/me", auth, async (req, res) => {
   try {
     const c = await User.findOne({ _id: req.user.id });
