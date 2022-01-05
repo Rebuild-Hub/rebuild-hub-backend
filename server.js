@@ -1,12 +1,11 @@
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
 const app = express();
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
-const authRoutes = require("./routes/auth")
+const authRoutes = require("./routes/auth");
 const wasteRoutes = require("./routes/wasteRoutes");
 const companyRoutes = require("./routes/companyRoutes");
-
 
 //middleware
 app.use(express.json());
@@ -16,6 +15,7 @@ app.use(cors());
 connectDB();
 
 //routes
+app.get("/api", (req, res) => res.send("Welcome to Rebuild Hub api"));
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/wastes", wasteRoutes);
